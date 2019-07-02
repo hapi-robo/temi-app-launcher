@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">App Launcher</string>
+    <string name="app_not_found">Activity not found</string>
+    <string name="appbar_scrolling_view_behavior">Scrolling</string>
+</resources>
