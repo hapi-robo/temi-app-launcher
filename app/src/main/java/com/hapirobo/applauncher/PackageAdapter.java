@@ -12,12 +12,12 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.MyViewHo
     private List<Package> packageList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView name, directory;
+        public TextView label, package_name;
 
         public MyViewHolder(View view) {
             super(view);
-            name = (TextView) view.findViewById(R.id.name);
-            directory = (TextView) view.findViewById(R.id.directory);
+            label = (TextView) view.findViewById(R.id.label);
+            package_name = (TextView) view.findViewById(R.id.package_name);
         }
     }
 
@@ -38,8 +38,8 @@ public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.MyViewHo
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Package pkg = packageList.get(position);
-        holder.name.setText(pkg.getName());
-        holder.directory.setText(pkg.getDirectory());
+        holder.label.setText(pkg.getLabel());
+        holder.package_name.setText(pkg.getPackageName());
     }
 
     // Return the size of your dataset (invoked by the layout manager)

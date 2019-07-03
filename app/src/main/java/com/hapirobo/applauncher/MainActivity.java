@@ -48,8 +48,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view, int position) {
                 Package pkg = packageList.get(position);
-//                Toast.makeText(getApplicationContext(), pkg.getName() + " is selected!", Toast.LENGTH_SHORT).show();
-                launchApp(pkg.getName());
+                launchApp(pkg.getPackageName());
             }
 
             @Override
@@ -68,10 +67,14 @@ public class MainActivity extends AppCompatActivity {
 
         // collect all package names
         for (ApplicationInfo packageInfo : packages) {
-            Log.d(TAG, "Installed package:" + packageInfo.packageName);
-            Log.d(TAG, "Source dir:" + packageInfo.sourceDir);
+            String label = String.valueOf(pm.getApplicationLabel(packageInfo));
+
+            Log.d(TAG, "Label: " + label);
+            Log.d(TAG, "Package Name: " + packageInfo.packageName);
+            Log.d(TAG, "Source Directory: " + packageInfo.sourceDir);
             Log.d(TAG, "Launch Activity: " + pm.getLaunchIntentForPackage(packageInfo.packageName));
-            Package pkg = new Package(packageInfo.packageName, packageInfo.sourceDir);
+
+            Package pkg = new Package(label, packageInfo.packageName);
             packageList.add(pkg);
         }
 

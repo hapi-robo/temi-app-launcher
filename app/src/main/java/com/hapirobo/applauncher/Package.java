@@ -1,26 +1,26 @@
 package com.hapirobo.applauncher;
 
 public class Package {
-    private String name, directory;
+    private String label, package_name;
 
-    public Package(String name, String directory) {
-        this.name = name;
-        this.directory = directory;
+    public Package(String label, String package_name) {
+        this.label = label;
+        this.package_name = package_name;
     }
 
-    public String getName() {
-        return name;
+    public String getLabel() {
+        return label;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLabel(String label) {
+        this.label = label;
     }
 
-    public String getDirectory() {
-        return directory;
+    public String getPackageName() {
+        return package_name;
     }
 
-    public void setDirectory(String directory) {
-        this.directory = directory;
+    public void setPackageName(String package_name) {
+        this.package_name = package_name;
     }
 }
